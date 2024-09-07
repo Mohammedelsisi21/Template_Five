@@ -10,9 +10,13 @@ body {
     font-family: "Cairo", system-ui;
 }
 :root {
-    --main-color: #0A6847;
-    --main-color-alt: #508D4E;
+    
+    --main-color: #009688;
+    --main-color-alt: #58b67a;
     --transition-main: .4s;
+    --padding-top: 100px;
+    --padding-bottom: 100px;
+    --section-color: #ececec;
 }
 a {
     text-decoration: none;
@@ -365,8 +369,8 @@ ul {
     width: 600px;
     max-width: 600px;
     position: relative;
-    animation: up-down 4s linear infinite;
-    -webkit-animation: up-down 4s linear infinite;
+    animation: up-down 2.5s linear infinite;
+    -webkit-animation: up-down 2.5s linear infinite;
 }
 @media (max-width: 991px){
     .landing .imag img {
@@ -375,8 +379,8 @@ ul {
 }
 @media (max-width:767px) {
     .landing .imag img {
-        animation: up-down-mo 4s linear infinite;
-        -webkit-animation: up-down-mo 4s linear infinite;
+        animation: up-down-mo 2.5s linear infinite;
+        -webkit-animation: up-down-mo 2.5s linear infinite;
 }
 }
 .landing .go-down {
@@ -402,6 +406,135 @@ ul {
 .landing .go-down svg{
     animation: d 1.5s infinite;
     -webkit-animation: d 1.5s infinite;
+}
+.articles {
+    padding-top: var(--padding-top);
+    padding-bottom: var(--padding-bottom);
+    position: relative;
+}
+.articles .container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 40px;
+}
+.articles .container .box {
+    overflow: hidden;
+    border-radius: 7px;
+    background-color: white;
+    box-shadow: 0px 2px 15px rgb(0, 0, 0, 0.1);
+    -webkit-border-radius: 7px;
+    -moz-border-radius: 7px;
+    -ms-border-radius: 7px;
+    -o-border-radius: 7px;
+    transition: transform var(--transition-main), box-shadow var(--transition-main);
+    -webkit-transition: transform var(--transition-main), box-shadow var(--transition-main);
+    -moz-transition: transform var(--transition-main), box-shadow var(--transition-main);
+    -ms-transition: transform var(--transition-main), box-shadow var(--transition-main);
+    -o-transition: transform var(--transition-main), box-shadow var(--transition-main);
+}
+.articles .container .box:hover {
+    box-shadow: 5px 5px 10px rgb(0, 0, 0, 0.3);
+    transform: translateY(-20px);
+    -webkit-transform: translateY(-20px);
+    -moz-transform: translateY(-20px);
+    -ms-transform: translateY(-20px);
+    -o-transform: translateY(-20px);
+}
+.articles .container .box img {
+    width: 100%;
+}
+.articles .container .box .content {
+    padding: 20px;
+}
+.articles .container .content h3 {
+    color: black;
+    line-height: 1.6;
+    margin: 0px;
+}
+.articles .container .content p {
+    color: #666;
+    line-height: 1.6;
+    margin: 10px 0 0 ;
+}
+.articles .container .box .info {
+    border-top: 1px solid #e6e6e7;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.articles .container .info a {
+    color: var(--main-color);
+    font-size: 18px;
+    font-weight: bold;
+}
+.articles .container .info svg {
+    color: var(--main-color);
+}
+.articles .container .box:hover .info svg {
+    animation: ani-box var(--transition-main) linear infinite;
+    -webkit-animation: ani-box var(--transition-main) linear infinite;
+}
+.gallery {
+    padding-top: var(--padding-top);
+    padding-bottom: var(--padding-bottom);
+    position: relative;
+    background-color: var(--section-color);
+}
+.gallery .container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 40px;
+}
+.gallery .container .box {
+    padding: 15px;
+    background-color: white;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0px 12px 24px rgb(0,0,0,.3), 0px 2px 4px rgb(0, 0, 0, 0.1);
+}
+.gallery .container .box::before {
+    content: "";
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 0px;
+    height: 0px;
+    z-index: 1;
+    background: rgba(255, 255, 255, 0.2);
+}
+.gallery .container .box:hover::before {
+    animation: flash var(--transition-main);
+    -webkit-animation: flash .8s;
+}
+.gallery .box .image {
+    position: relative;
+    overflow: hidden;
+}
+.gallery .box .image img {
+    max-width: 100%;
+    transition: var(--transition-main);
+    -webkit-transition: var(--transition-main);
+    -moz-transition: var(--transition-main);
+    -ms-transition: var(--transition-main);
+    -o-transition: var(--transition-main);
+}
+.gallery .box:hover .image img {
+    transform: rotate(10deg) scale(1.2);
+    -webkit-transform: rotate(10deg) scale(1.2);
+    -moz-transform: rotate(10deg) scale(1.2);
+    -ms-transform: rotate(10deg) scale(1.2);
+    -o-transform: rotate(10deg) scale(1.2);
+}
+.features {
+    padding-top: var(--padding-top);
+    padding-bottom: var(--padding-bottom);
+    position: relative;
+}
+.features .container{
+
 }
 /* Animation */
 @keyframes  waviy {
@@ -479,5 +612,31 @@ ul {
         -ms-border-radius: 0px;
         -o-border-radius: 0px;
 }
+}
+@keyframes ani-box {
+    0%,10%,30%,50%,100%{
+        transform: translateX(0px);
+        -webkit-transform: translateX(0px);
+        -moz-transform: translateX(0px);
+        -ms-transform: translateX(0px);
+        -o-transform: translateX(0px);
+}
+    40%,60% {
+        transform: translateX(5px);
+        -webkit-transform: translateX(5px);
+        -moz-transform: translateX(5px);
+        -ms-transform: translateX(5px);
+        -o-transform: translateX(5px);
+}
+}
+@keyframes flash {
+    0%,40% {
+        opacity: 1;
+    }
+    100% {
+        width: 150%;
+        height: 150%;
+        opacity: 0;
+    }
 }
 /* End landing */
