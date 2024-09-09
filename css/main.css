@@ -1517,6 +1517,31 @@ ul {
     -ms-border-radius: 3px;
     -o-border-radius: 3px;
 }
+.stats .box::after,
+.stats .box::before {
+    content: "";
+    position: absolute;
+    width: 3px;
+    height: 0px;
+    background: var(--main-color);
+    transition: var(--transition-main);
+    -webkit-transition: var(--transition-main);
+    -moz-transition: var(--transition-main);
+    -ms-transition: var(--transition-main);
+    -o-transition: var(--transition-main);
+}
+.stats .box::after{
+    bottom: 0px;
+    left: -4px;
+}
+.stats .box::before {
+    top: 0px;
+    right: -4px;
+}
+.stats .box:hover::after,
+.stats .box:hover::before {
+    height: 100%;
+}
 .stats .box i {
     display: block;
     margin: 10px 0px;
