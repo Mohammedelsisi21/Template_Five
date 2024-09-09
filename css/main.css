@@ -11,8 +11,8 @@ body {
 }
 :root {
     
-    --main-color: #009688;
-    --main-color-alt: #58b67a;
+    --main-color: #078666;
+    --main-color-alt: #009688;
     --transition-main: .4s;
     --padding-top: 100px;
     --padding-bottom: 100px;
@@ -1090,6 +1090,166 @@ ul {
     width: 100%;
     height: 100%;
 }
+.events {
+    padding-top: var(--padding-top);
+    padding-bottom: var(--padding-bottom);
+    position: relative;
+    background-color: white;
+}
+.events .container {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.events img {
+    max-width: 450px;
+}
+@media (max-width: 991px) {
+    .events img {
+        display: none;
+    }
+}
+.events .info {
+    flex: 1;
+}
+.events .info .time {
+    display: flex;
+    margin: 20px auto;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+.events .time .box {
+    border: 1px solid #d4d4d4;
+    border-radius: 6px;
+    width: 75px;
+    transition: var(--transition-main);
+    -webkit-transition: var(--transition-main);
+    -moz-transition: var(--transition-main);
+    -ms-transition: var(--transition-main);
+    -o-transition: var(--transition-main);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+.events .time .box:hover{
+    border: 1px solid var(--main-color);
+}
+.events .team .box span {
+    display: block;
+}
+.events .time .box span:first-child {
+    font-size: 35px;
+    padding: 15px;
+    color: var(--main-color);
+    font-weight: bold;
+}
+.events .time .box span:last-child {
+    padding: 8px 10px;
+    font-size: 13px;
+    border-top: 1px solid #d4d4d4;
+    width: 100%;
+    text-align: center;
+    transition: var(--transition-main);
+    -webkit-transition: var(--transition-main);
+    -moz-transition: var(--transition-main);
+    -ms-transition: var(--transition-main);
+    -o-transition: var(--transition-main);
+}
+.events .time .box:hover span:last-child {
+    border-top: 1px solid var(--main-color);
+}
+.events .info .title {
+    text-align: center;
+}
+.events .info h2 {
+    text-transform: capitalize;
+    color: black;
+    margin: 20px auto;
+    font-size: 30px;
+}
+.events .info p {
+    line-height: 1.6;
+    color: #777;
+    font-size: 17px;
+}
+.events .subscript {
+    width: 100%;
+}
+.events .subscript form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    width: 80%;
+    margin: 50px auto;
+    padding: 30px;
+    background-color: var(--section-color);
+    border-radius: 50px;
+    -webkit-border-radius: 50px;
+    -moz-border-radius: 50px;
+    -ms-border-radius: 50px;
+    -o-border-radius: 50px;
+}
+.events form input {
+    border: none;
+    outline: none;
+    padding: 15px 20px;
+    border-radius: 50px;
+    -webkit-border-radius: 50px;
+    -moz-border-radius: 50px;
+    -ms-border-radius: 50px;
+    -o-border-radius: 50px;
+}
+.events form input[type="email"] {
+    flex: 1;
+    color: black;
+    background-color: #ffffff;
+    caret-color: var(--main-color);
+}
+.events form input[type="email"]::placeholder {
+    text-transform: capitalize;
+    color: #777;
+}
+.events form input[type="button"] {
+    width: 30%;
+    color: white;
+    background-color: var(--main-color);
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: bold;
+    transition: var(--transition-main);
+    -webkit-transition: var(--transition-main);
+    -moz-transition: var(--transition-main);
+    -ms-transition: var(--transition-main);
+    -o-transition: var(--transition-main);
+}
+.events form input[type="button"]:hover {
+    background-color: var(--main-color-alt);
+}
+
+
+@media (max-width: 767px) {
+    .events .subscript form {
+        flex-direction: column;
+    }
+    .events .subscript form,
+    .events form input{
+    border-radius: 12px;
+    -webkit-border-radius: 12px;
+    -moz-border-radius: 12px;
+    -ms-border-radius: 12px;
+    -o-border-radius: 12px;
+}
+    .events form input[type="email"] {
+        width: 100%;
+    }
+    .events form input[type="button"] {
+        width: 75%;
+    }
+}
 /* Animation */
 @keyframes  waviy {
     0%,
@@ -1144,7 +1304,7 @@ ul {
         left: 0px;
     }100% {
         left: 0px;
-        width: 100%;
+        width: 55%;
         height: 100%;
         border-radius: 0px;
         -webkit-border-radius: 0px;
@@ -1158,7 +1318,7 @@ ul {
         right: 0px;
     }100% {
         right: 0px;
-        width: 100%;
+        width: 55%;
         height: 100%;
         border-radius: 0px;
         -webkit-border-radius: 0px;
