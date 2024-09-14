@@ -10,7 +10,6 @@ body {
     font-family: "Cairo", system-ui;
 }
 :root {
-    
     --main-color: #078666;
     --main-color-alt: #009688;
     --transition-main: .4s;
@@ -206,7 +205,6 @@ ul {
     z-index: 99999;
     opacity: 1;
     top: calc(100% + 1px);
-
 }
 .header .mega-menu {
     position: absolute;
