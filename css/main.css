@@ -17,6 +17,21 @@ body {
     --padding-bottom: 100px;
     --section-color: #ececec;
 }
+::-webkit-scrollbar {
+    width: 25px;
+}
+::-webkit-scrollbar-track {
+    background-color: #696969;
+}
+::-webkit-scrollbar-thumb {
+    background-color: var(--main-color-alt);
+    height: 150px;
+}
+@media (max-width:768px ) {
+::-webkit-scrollbar {
+    width: 0;
+}
+}
 a {
     text-decoration: none;
 }
